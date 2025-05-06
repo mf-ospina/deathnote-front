@@ -1,0 +1,26 @@
+html, body {
+  height: 90%;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+  max-width: 90%;
+  margin: 4%auto;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+}
+.fullscreen {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.custom-container {
+  border-radius: 20px;
+  overflow: hidden; 
+}
+
+.logo{
+  background-color: yellowgreen;
+}
