@@ -16,45 +16,45 @@ const Register: React.FC<RegisterProps> = ({ firstName, edad, onSave, setFoto })
   };
 
   return (
-    <div className="container mt-5">
-      <div className="card shadow p-4">
-        <h2 className="mb-4 text-center">Registro de Víctima</h2>
-         
-        <div className="mb-3">
-          <label htmlFor="firstName" className="form-label">
+    <div className="custom-form-container">
+      <div className="custom-form-box">
+        <h2 className="custom-form-title">Registro de Víctima</h2>
+  
+        <div className="custom-form-group">
+          <label htmlFor="firstName" className="custom-form-label">
             Nombre
           </label>
           <input
             type="text"
-            className="form-control"
+            className="custom-form-input"
             id="firstName"
             value={localFirstName}
             onChange={(e) => setLocalFirstName(e.target.value)}
             placeholder="Ingresa el nombre"
           />
         </div>
-
-        <div className="mb-3">
-          <label htmlFor="edad" className="form-label">
+  
+        <div className="custom-form-group">
+          <label htmlFor="edad" className="custom-form-label">
             Edad
           </label>
           <input
             type="number"
-            className="form-control"
+            className="custom-form-input"
             id="edad"
             value={localEdad}
             onChange={(e) => setLocalEdad(e.target.value)}
             placeholder="Ingresa la edad"
           />
         </div>
-
-        <div className="mb-3">
-          <label htmlFor="foto" className="form-label">
+  
+        <div className="custom-form-group">
+          <label htmlFor="foto" className="custom-form-label">
             Foto
           </label>
           <input
             type="file"
-            className="form-control"
+            className="custom-form-input"
             id="foto"
             accept="image/*"
             onChange={(e) => {
@@ -64,15 +64,16 @@ const Register: React.FC<RegisterProps> = ({ firstName, edad, onSave, setFoto })
             }}
           />
         </div>
-
-        <div className="d-grid mt-4">
-          <button className="btn btn-primary" onClick={handleSave}>
+  
+        <div className="custom-form-actions">
+          <button className="btn-save" onClick={handleSave}>
             Guardar
           </button>
         </div>
       </div>
     </div>
   );
+  
 };
 
 export default Register;

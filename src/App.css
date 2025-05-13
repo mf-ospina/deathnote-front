@@ -1,16 +1,47 @@
+/* Reset básico para consistencia entre navegadores */
 html, body {
-  height: 90%;
+  height: 100%;
+  width: 100%;
   margin: 0;
+  padding: 10px;
+  overflow: hidden;
 }
 
-#root {
+body {
+  background-image: url('https://images7.alphacoders.com/118/1183283.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  background-attachment: fixed;
+  background-color: rgba(30, 24, 65, 0.8);
+  background-blend-mode: overlay;
+  font-family: 'Georgia', serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*#root {
   height: 100%;
   max-width: 90%;
   margin: 4%auto;
   padding: 0;
   text-align: center;
   overflow: hidden;
+}*/
+
+#root {
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: row; /* horizontal layout */
+  gap: 20px;
 }
+
 .fullscreen {
   height: 100vh;
   overflow: hidden;
@@ -21,6 +52,996 @@ html, body {
   overflow: hidden; 
 }
 
-.logo{
-  background-color: yellowgreen;
+.flex-grow-1{
+  background-color: rgb(24, 21, 42, 0.72);
+  overflow: hidden;
+}
+
+.navbar{
+  width: 250px;
+  min-height: auto;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu {
+  flex: 3;
+}
+
+.death-apple{
+  width: 100%; 
+  padding-top: 10%;
+  padding-bottom: 20%;
+}
+
+.card {
+  background-image: url('https://images7.alphacoders.com/118/1183283.jpg'); 
+  width: 100%; /* Se adapta al contenedor */
+  height: 200px; 
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card img {
+  align-self: flex-start; 
+  justify-content: center;
+  height: 100%;       /* ocupa todo el ancho */
+  object-fit: cover;  /* se recorta sin deformarse */
+}
+
+.carousel-img {
+  height: 250px;
+  object-fit: cover; /* Ajusta la imagen al contenedor sin deformarla */
+}
+
+#carouselExampleAutoplaying {
+  height: 30vh;
+}
+
+#carouselExampleAutoplaying .carousel-inner {
+  height: 100%;
+  border-radius: 5px;
+}
+
+#carouselExampleAutoplaying .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.titulo-contenedor {
+  background: linear-gradient(135deg, #662124, #1f1a2a);
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.titulo-texto {
+  color: #e60000;
+  text-shadow: 0 0 10px #e60000;
+  margin: 0;  /* Elimina los márgenes predeterminados del h1 */
+  font-family: 'Cinzel', serif;
+}
+
+.ultimas-victimas {
+  background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+  padding: 30px;
+  border-radius: 12px;
+  color: #ffffff;
+  box-shadow: 0 0 2px #e60000;
+  font-family: 'Cinzel', serif;
+  width: 100%;          
+  flex-grow: 1;          
+  margin-top: 10px; 
+}
+
+.ultimas-victimas h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #e60000;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #e60000;
+}
+
+.lista-victimas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-victimas li {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-left: 4px solid #e60000;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+
+.lista-victimas li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/*ESTILOS EDE LA LIBRETA */
+.notebook {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .notebook {
+    flex-direction: row;
+  }
+}
+
+.notebook-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2vh auto;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background: #1c1c1c;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  display: flex;
+  overflow: hidden; /* Oculta cualquier overflow */
+}
+
+.notebook h2{
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 30px #e60000;
+  font-family: 'Georgia', serif;
+}
+
+.page {
+  flex: 1;
+  padding: 2rem;
+  min-height: 50vh;
+  max-height: 100%;
+  overflow: hidden;
+  color: #f4f4f4;
+  font-family: 'Georgia', serif;
+  background: #2b2b2b;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.right-page {
+  background: #111;
+  border-left: 1px solid #444;
+  font-family: 'Cinzel', serif;
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+  .right-page {
+    border-left: none;
+    border-top: 1px solid #444;
+  }
+}
+
+
+.death-note-rules {
+  background-color: #1c1c1c;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden; /* ← IMPORTANTE para que el contenido no se salga */
+}
+.death-note-rules ol {
+  padding-left: 1.2em;
+  list-style-position: inside;
+}
+
+.death-note-rules li {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+
+
+/* FORMULARIO RESPONSIVE */
+.custom-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0 0.5rem;
+}
+
+.custom-form-box {
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.custom-form-title {
+  color: #ff0055;
+  text-align: center;
+  text-shadow: 0 0 10px #ff0055;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  margin-bottom: 1.5rem;
+}
+
+.custom-form-group {
+  margin-bottom: 1.2rem;
+}
+
+.custom-form-label {
+  text-align: left;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #f0f0f0;
+  font-weight: bold;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.custom-form-input {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #492a2a10;
+  border: 1px solid rgba(255, 0, 85, 0.3);
+  box-shadow: 0 0 5px rgba(255, 0, 85, 0.3);
+  color: #f0f0f0;
+  border-radius: 6px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.custom-form-input::placeholder {
+  color: #888;
+}
+
+.custom-form-actions {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.btn-save {
+  background-color: #ff0055;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: 'Cinzel', serif;
+  width: 100%;
+  max-width: 200px;
+}
+
+.btn-save:hover {
+  background-color: #e6004f;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  background-color: #81012c;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+}
+
+input[type="file"]::file-selector-button {
+  background-color: #81012c;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+  .notebook {
+    flex-direction: row;
+    height: 90vh;
+  }
+  
+  .page {
+    min-height: auto;
+    border-bottom: none;
+  }
+  
+  .right-page {
+    border-left: 1px solid #444;
+    border-top: none;
+  }
+  
+  .custom-form-label {
+    text-align: center;
+  }
+  
+  .btn-save {
+    width: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .notebook {
+    height: 85vh;
+  }
+  
+  .page {
+    padding: 2rem;
+  }
+  
+  .death-note-rules {
+    padding: 20px;
+  }
+  
+  .custom-form-box {
+    padding: 30px;
+  }
+}
+
+
+/* Contenedor principal */
+.dn-victims-grid {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dn-section-title {
+  color: #e60000;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0 8px rgba(230, 0, 0, 0.3);
+  font-family: 'Cinzel', serif;
+  position: relative;
+}
+
+.dn-section-title::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #e60000, transparent);
+  margin: 0.5rem auto;
+}
+
+
+
+
+/* Contenedor de tarjetas */
+.dn-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  justify-content: center;
+  max-width: 960px; /* 3 x 300px tarjetas aprox */
+  margin: 0 auto;
+}
+
+/* Tarjeta individual */
+.dn-victim-card {
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border-left: 3px solid #e60000;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.dn-victim-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(230, 0, 0, 0.2);
+}
+
+/* Encabezado de tarjeta */
+.dn-card-header {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  background: rgba(0, 0, 0, 0.3);
+  position: relative;
+  border-bottom: 1px solid #333;
+}
+
+.dn-victim-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e60000;
+  margin-right: 1rem;
+  box-shadow: 0 0 10px rgba(230, 0, 0, 0.5);
+}
+
+.dn-victim-basic-info {
+  flex-grow: 1;
+}
+
+.dn-victim-name {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+  font-family: 'Cinzel', serif;
+}
+
+.dn-victim-age {
+  color: #aaa;
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+}
+
+.dn-death-symbol {
+  color: #e60000;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+/* Cuerpo de tarjeta */
+.dn-card-body {
+  padding: 1.2rem;
+  flex-grow: 1;
+}
+
+.dn-info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.dn-info-label {
+  color: #777;
+}
+
+.dn-info-value {
+  color: #ddd;
+  font-weight: 500;
+}
+
+.dn-status-indicator {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.dn-status-active {
+  display: inline-block;
+  background-color: rgba(230, 0, 0, 0.2);
+  color: #e60000;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 1px solid #e60000;
+}
+
+/* Pie de tarjeta */
+.dn-card-footer {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid #333;
+  text-align: center;
+}
+
+.dn-details-button {
+  background: transparent;
+  color: #e60000;
+  border: 1px solid #e60000;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Cinzel', serif;
+}
+
+.dn-details-button:hover {
+  background: rgba(230, 0, 0, 0.1);
+}
+
+/* Estados */
+.dn-loading-card,
+.dn-error-card,
+.dn-empty-card {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(30, 30, 30, 0.8);
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  color: #aaa;
+}
+
+.dn-loading-animation {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(230, 0, 0, 0.3);
+  border-top-color: #e60000;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dn-cards-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .dn-section-title {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+/* Estilos del Modal */
+.dn-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.dn-modal {
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-left: 4px solid #e60000;
+  box-shadow: 0 0 30px rgba(230, 0, 0, 0.3);
+  position: relative;
+}
+
+.dn-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #e60000;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.dn-modal-header {
+  padding: 2rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  position: relative;
+  border-bottom: 1px solid #333;
+}
+
+.dn-modal-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e60000;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 15px rgba(230, 0, 0, 0.5);
+}
+
+.dn-modal-title {
+  color: white;
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+  font-family: 'Cinzel', serif;
+}
+
+.dn-modal-age {
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+.dn-modal-body {
+  padding: 2rem;
+}
+
+.dn-modal-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+.dn-modal-label {
+  color: #777;
+  font-weight: bold;
+}
+
+.dn-modal-value {
+  color: #ddd;
+  text-align: right;
+  max-width: 60%;
+}
+
+.dn-modal-status {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.dn-modal-footer {
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+.dn-modal-button {
+  background: transparent;
+  color: #e60000;
+  border: 1px solid #e60000;
+  padding: 0.7rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  transition: all 0.3s;
+}
+
+.dn-modal-button:hover {
+  background: rgba(230, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dn-modal {
+    width: 95%;
+  }
+  
+  .dn-modal-row {
+    flex-direction: column;
+  }
+  
+  .dn-modal-value {
+    max-width: 100%;
+    text-align: left;
+    margin-top: 0.3rem;
+  }
+}
+
+
+/* Estilo Death Note para el formulario */
+.deathnote-cause-form {
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border: 1px solid #e60000;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(230, 0, 0, 0.3);
+  font-family: 'Georgia', serif;
+}
+
+.deathnote-form-title {
+  color: #e60000;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px rgba(230, 0, 0, 0.5);
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+}
+
+.deathnote-timer-notice {
+  background: rgba(230, 0, 0, 0.1);
+  border-left: 4px solid #e60000;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
+.deathnote-timer-notice p {
+  color: #ff9999;
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.deathnote-input-group {
+  margin-bottom: 1.5rem;
+}
+
+.deathnote-form-label {
+  display: block;
+  color: #ff6666;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.deathnote-form-input {
+  width: 100%;
+  padding: 0.8rem;
+  background: rgba(73, 42, 42, 0.2);
+  border: 1px solid rgba(230, 0, 0, 0.5);
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.deathnote-form-input:focus {
+  outline: none;
+  border-color: #7a0808;
+  box-shadow: 0 0 10px rgba(230, 0, 0, 0.5);
+}
+
+.deathnote-form-input::placeholder {
+  color: #666;
+}
+
+.deathnote-form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.deathnote-btn {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+}
+
+.deathnote-btn-save {
+  background-color: #e60000;
+  color: white;
+}
+
+.deathnote-btn-save:hover {
+  background-color: #cc0000;
+  transform: translateY(-2px);
+}
+
+.deathnote-btn-cancel {
+  background: transparent;
+  color: #e60000;
+  border: 1px solid #e60000;
+}
+
+.deathnote-btn-cancel:hover {
+  background: rgba(230, 0, 0, 0.1);
+}
+
+/* Estilo para el timer (asegúrate de que tu componente Timer tenga estas clases) */
+.deathnote-timer {
+  font-size: 1.5rem;
+  color: #e60000;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .deathnote-cause-form {
+    padding: 1.5rem;
+  }
+  
+  .deathnote-form-actions {
+    flex-direction: column;
+  }
+  
+  .deathnote-btn {
+    width: 100%;
+  }
+}
+
+
+/* Contenedor principal con altura controlada */
+.deathnote-detail-container {
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border: 2px solid #660000;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 600px;
+  margin: 1rem auto;
+  box-shadow: 0 0 25px rgba(102, 0, 0, 0.4);
+  font-family: 'Georgia', serif;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: auto;
+  max-height: 90vh;
+}
+
+/* Contenedor de contenido con scroll interno */
+.deathnote-detail-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem; /* Espacio para el scroll */
+  margin-bottom: 1rem;
+}
+
+/* Personalización del scroll */
+.deathnote-detail-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.deathnote-detail-content::-webkit-scrollbar-thumb {
+  background-color: #660000;
+  border-radius: 3px;
+}
+
+.deathnote-detail-content::-webkit-scrollbar-track {
+  background-color: #1a1a1a;
+}
+
+/* Encabezado fijo */
+.deathnote-detail-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #660000;
+  padding-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  z-index: 10;
+}
+
+/* Área de texto con altura flexible */
+.deathnote-detail-textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #640303;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  min-height: 150px;
+  max-height: 300px;
+  resize: vertical;
+  transition: all 0.3s;
+}
+
+/* Botones fijos en la parte inferior */
+.deathnote-detail-actions {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #660000;
+  margin-top: auto; /* Empuja los botones hacia abajo */
+  flex-shrink: 0; /* Evita que se reduzcan */
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+  .deathnote-detail-container {
+    max-height: 85vh;
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .deathnote-detail-actions {
+    flex-direction: column;
+  }
+  
+  .deathnote-detail-textarea {
+    max-height: 200px;
+  }
+}
+
+/* Mantener el resto de estilos previos para los demás elementos */
+.deathnote-detail-title {
+  color: #ff0000;
+  text-align: center;
+  font-size: 1.4rem;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+  font-family: 'Cinzel', serif;
+  margin-bottom: 1rem;
+}
+
+.deathnote-id-mark {
+  color: #ff0000;
+  margin-right: 0.5rem;
+}
+
+.deathnote-timer-wrapper {
+  background: rgba(102, 0, 0, 0.2);
+  padding: 0.8rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.deathnote-time-notice {
+  display: block;
+  color: #ff9999;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.deathnote-detail-label {
+  display: block;
+  color: #ff6666;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.deathnote-btn {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.deathnote-btn-confirm {
+  background: linear-gradient(to bottom, #660000, #800000);
+  color: white;
+  border: 1px solid #ff0000;
+}
+
+.deathnote-btn-confirm:hover {
+  background: linear-gradient(to bottom, #800000, #990000);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+}
+
+.deathnote-btn-cancel {
+  background: transparent;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+}
+
+.deathnote-btn-cancel:hover {
+  background: rgba(102, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+}
+
+.deathnote-btn-icon {
+  font-size: 1.2rem;
 }

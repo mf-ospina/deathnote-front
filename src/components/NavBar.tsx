@@ -6,11 +6,16 @@ const NavBar: React.FC = () => {
   return (
     <>
       {/* Versión desktop (barra lateral) */}
-      <div className="d-none d-md-block bg-dark text-white p-3 d-flex flex-column justify-content-start logo" 
-           style={{ width: '250px', minHeight: '100vh' }}>
+      <div className="d-none d-md-block d-flex flex-column navbar">
             
-        <h4 className="text-center mb-4">DeathNote</h4>
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column logo">
+          <img src="https://wallpapers.com/images/featured/death-note-logo-png-1xtme5kzvjo4xc8q.jpg" alt="Death Note" 
+            className="death-apple"/>
+          <img src="https://pnghq.com/wp-content/uploads/2023/02/logo-death-note-apple-png-5920-278x300.png" alt="Death Note" 
+            className="death-apple"/>
+        </div>
+
+        <div className="d-flex flex-column menu">
           <NavLink to="/" className="btn btn-outline-light mb-2">Inicio</NavLink>
           <NavLink to="/registro" className="btn btn-outline-light mb-2">Registro</NavLink>
           <NavLink to="/victimas" className="btn btn-outline-light">Víctimas</NavLink>

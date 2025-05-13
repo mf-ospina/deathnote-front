@@ -19,30 +19,43 @@ const RegisterDetail: React.FC<RegisterCauseProps> = ({ id, detail, onSave, onCa
     onCancel();
   };
 
-  return ( 
-    <div className="container mt-4">
-      <h4>Detalle del caso (ID: {id})</h4>
+  return (
+    <div className="deathnote-detail-container">
+      <div className="deathnote-detail-content">
+        <div className="deathnote-detail-header">
+          <h3 className="deathnote-detail-title">
+            <span className="deathnote-id-mark">✍</span> Detalles de la Víctima (ID: {id})
+          </h3>
+          <div className="deathnote-timer-wrapper">
+            <Timer time={400} onTimeEnd={handleCancel} />
+            <span className="deathnote-time-notice">Tienes 6 minutos y 40 segundos para registrar los detalles</span>
+          </div>
+        </div>
 
-      <div className="mb-3">
-        <label htmlFor="detail" className="form-label">Detalle</label>
-        <textarea
-          className="form-control"
-          id="detail"
-          rows={4}
-          value={localDetail}
-          onChange={(e) => setLocalDetail(e.target.value)}
-          placeholder="Ingresa el detalle..."
-        />
+        <div className="deathnote-detail-input-group">
+          <label htmlFor="detail" className="deathnote-detail-label">
+            Describe los detalles de la muerte:
+          </label>
+          <textarea
+            className="deathnote-detail-textarea"
+            id="detail"
+            rows={5}
+            value={localDetail}
+            onChange={(e) => setLocalDetail(e.target.value)}
+            placeholder="Ej: La víctima sufrió un accidente automovilístico a las 3:15 PM..."
+            autoFocus
+          />
+        </div>
       </div>
 
-      <button className="btn btn-success me-2" onClick={handleSave}>
-        Guardar
-      </button>
-      <button className="btn btn-secondary" onClick={handleCancel}>
-        Cancelar
-      </button>
-
-      <Timer time={400} onTimeEnd={handleCancel} />
+      <div className="deathnote-detail-actions">
+        <button className="deathnote-btn deathnote-btn-confirm" onClick={handleSave}>
+          <span className="deathnote-btn-icon">✓</span> Confirmar Detalles
+        </button>
+        <button className="deathnote-btn deathnote-btn-cancel" onClick={handleCancel}>
+          <span className="deathnote-btn-icon">✗</span> Cancelar
+        </button>
+      </div>
     </div>
   );
 };

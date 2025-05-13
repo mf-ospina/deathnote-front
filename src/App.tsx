@@ -2,6 +2,7 @@ import NavBar from './components/NavBar'
 import AppRoutes from './assets/router/routes'
 import './App.css'
 
+
 function App() {
   return (
     <div className="d-flex flex-column flex-md-row h-100 custom-container">
@@ -9,7 +10,7 @@ function App() {
         <NavBar />
       </div>
 
-      <div className="flex-grow-1 bg-light overflow-auto p-3">
+      <div className="flex-grow-1 overflow-auto p-3">
         <AppRoutes />
       </div>
     </div>
@@ -18,3 +19,4 @@ function App() {
 
 
 export default App
+

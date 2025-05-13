@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import NotebookLayout from "../components/NotebookLayout";
 import { enviarPersona } from '../services/ApiService';
 import { sendCause } from '../services/ApiService';
 import { sendDetail } from '../services/ApiService';
@@ -7,8 +8,8 @@ import Register from '../components/Register';
 import RegisterCause from '../components/RegisterCause';
 import RegisterDetail from '../components/RegisterDetail'; 
 
-const Registro = () => {
 
+const Registro: React.FC = () => {
   const [photo, setFoto] = useState<File | null>(null);
   const [etapa, setEtapa] = useState<'registro' | 'causa' | 'detalle'>('registro'); 
   const [personId, setPersonId] = useState<string>('');
@@ -74,8 +75,10 @@ const Registro = () => {
     navigate('/victimas'); 
   };
 
+
   return (
-    <div className="registro-form p-4">
+    <NotebookLayout>
+    <div className="registro-form">
       {etapa === 'registro' && (
         <Register firstName="" edad={0} onSave={handleSave} setFoto={setFoto} 
         />
@@ -96,6 +99,7 @@ const Registro = () => {
         />
       )}
     </div>
+    </NotebookLayout>
   );
 };
 

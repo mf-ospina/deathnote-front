@@ -1,87 +1,70 @@
-import { useEffect, useState } from 'react';
-import { getPeople } from '../services/ApiService';
-import { API_URL } from '../services/config';
-
-interface Persona {
-  person_id: number;
-  name: string;
-  age: number;
-  photo_url: string;
-  created_at: string;
-}
-
-const Victimas = () => {
-  const [people, setPeople] = useState<Persona[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getPeople();
-        if (Array.isArray(data) && data.length > 0) {
-          setPeople(data);
-        } else {
-          setPeople([]);
-          setError('No hay datos en la base.');
-        }
-      } catch (err) {
-        setPeople([]);
-        setError('No hay datos en la base.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+const Home = () => {
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">Víctimas</h2>
-
-      {loading ? (
-        <p>Cargando...</p>
-      ) : error ? (
-        <p className="text-danger">{error}</p>
-      ) : (
-        <div className="table-responsive">
-          <table className="table table-bordered table-striped table-hover">
-            <thead className="bg-black text-white">
-              <tr>
-                <th>Foto</th>
-                <th>Nombre</th>
-                <th>Edad</th>
-                <th>Fecha</th>
-              </tr>
-            </thead>
-            <tbody>
-              {people.map((person) => (
-                <tr key={person.person_id}>
-                  <td>
-                    <img
-                      src={`${API_URL}${person.photo_url}`}
-                      alt={person.name}
-                      className="img-thumbnail"
-                      style={{
-                        width: '90px',
-                        height: '100px',
-                        objectFit: 'cover',
-                        borderRadius: '4px',
-                      }}
-                    />
-                  </td>
-                  <td>{person.name}</td>
-                  <td>{person.age}</td>
-                  <td>{new Date(person.created_at).toLocaleString()}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+    <div className="container text-center">
+      <div className="row">
+        <div className="col-12 col-md-8">
+        <div className="titulo-contenedor">
+          <h1 className="titulo-texto">Escribe el Destino: Death Note</h1>
         </div>
-      )}
+
+          <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel"  data-bs-interval="1000">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img 
+                  src="https://traditionalcatholicweeb.wordpress.com/wp-content/uploads/2023/04/death-note-light-yagami.jpg" 
+                  className="d-block w-100" 
+                  alt="..."/>
+              </div>
+              <div className="carousel-item">
+                <img 
+                  src="https://cdn.shopify.com/s/files/1/0593/0526/3264/files/Death_Note_Characters__Heights__Age_and_Birthday_An_480x480.jpg?v=1657187332" 
+                  className="d-block w-100" 
+                  alt="..."/>
+              </div>
+              <div className="carousel-item">
+                <img 
+                  src="https://cdn.kayiprihtim.com/wp-content/uploads/2024/06/Yeni-Death-Note-Serisi-Yolda-Olabilir.jpg" 
+                  className="d-block w-100" 
+                  alt="..."/>
+              </div>
+            </div>
+          </div>
+
+
+          <div className="ultimas-victimas">
+          <h1>Últimas Víctimas</h1>
+          <ul className="lista-victimas">
+            <li>John Doe</li>
+            <li>Jane Smith</li>
+            <li>Takashi Arai</li>
+          </ul>
+        </div>
+
+
+        </div>
+
+        <div className="col-12 col-md-4 d-flex flex-column gap-4">
+        <div className="card d-flex flex-column">
+          <img src="https://www.anime-colors.com/wp-content/uploads/light-yagami.png"
+            className="card-img-top" alt="Light Yagami" />
+        </div>
+
+
+        <div className="card d-flex flex-column">
+          <img src="https://www.anime-colors.com/wp-content/uploads/ryuk.png"
+            className="card-img-top" alt="Light Yagami" />
+        </div>
+
+
+        <div className="card d-flex flex-column">
+          <img src="https://www.anime-colors.com/wp-content/uploads/l.png"
+            className="card-img-top" alt="Light Yagami" />
+        </div>
+
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Victimas;
+export default Home;

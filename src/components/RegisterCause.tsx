@@ -16,38 +16,36 @@ const RegisterCause: React.FC<RegisterCauseProps> = ({ id, cause, onSave, onCanc
   };
 
   return (
-    <div className="container mt-5">
-      <div className="card shadow-sm">
-        <div className="card-body">
-          <h2 className="card-title text-center mb-4">Registro de Causa de Muerte</h2>
+    <div className="deathnote-cause-form">
+      <h2 className="deathnote-form-title">✍️ Registro de Causa de Muerte</h2>
 
-          <div className="mb-3">
-            <label htmlFor="cause" className="form-label">
-              Tienes 40 segundos para ingresar la causa. Si no, muere del corazón.
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="cause"
-              value={localCause}
-              onChange={(e) => setLocalCause(e.target.value)}
-              placeholder="Ingresa la causa de muerte"
-            />
-          </div>
+      <div className="deathnote-timer-notice">
+        <Timer time={40} onTimeEnd={onCancel} />
+        <p>Tienes 40 segundos para registrar la causa o morirá de un infarto</p>
+      </div>
 
-          <div className="d-flex justify-content-between mt-4">
-            <button className="btn btn-primary" onClick={handleSave}>
-              Guardar Causa
-            </button>
-            <button className="btn btn-outline-secondary" onClick={onCancel}>
-              Que muera del ❤️
-            </button>
-          </div>
+      <div className="deathnote-input-group">
+        <label htmlFor="cause" className="deathnote-form-label">
+          Describe la causa de muerte:
+        </label>
+        <input
+          type="text"
+          id="cause"
+          className="deathnote-form-input"
+          value={localCause}
+          onChange={(e) => setLocalCause(e.target.value)}
+          placeholder="Ej: Accidente automovilístico, envenenamiento..."
+          autoFocus
+        />
+      </div>
 
-          <div className="mt-3">
-            <Timer time={40} onTimeEnd={onCancel} />
-          </div>
-        </div>
+      <div className="deathnote-form-actions">
+        <button className="deathnote-btn deathnote-btn-save" onClick={handleSave}>
+          ✒️ Guardar Causa
+        </button>
+        <button className="deathnote-btn deathnote-btn-cancel" onClick={onCancel}>
+          ❤️ Muerte por Infarto
+        </button>
       </div>
     </div>
   );
